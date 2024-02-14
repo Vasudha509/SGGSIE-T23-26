@@ -3,12 +3,13 @@
 // java program to perform operations on String class of Java
 import java.lang.String;
 
-class StringOperationStringOperation {
+class StringOperation {
   public static void main(String[] args) {
   // "Java_Programming" = char 
     String str = new String("Java_Programming");
     
     System.out.println("Given String : " + str);
+    
     // operation of string class on string
     
     // Returns the length of the string.
@@ -31,7 +32,7 @@ class StringOperationStringOperation {
     System.out.println("\npublic boolean equals(Object) \nstr.equals(\"Hii\") >> "+ str.equals("Hii"));
     
     // Compares this string to another string, ignoring case considerations.
-    System.out.println("\npublic boolean equalsIgnoreCase(String) \nstr.equalsIgnoreCase(\"java_programming\") >> "+ str.equalsIgnoreCase("java_programming"));
+    System.out.println("\npublic boolean equalsIgnoreCase(String)  \nstr.equalsIgnoreCase(\"java_programming\") >> "+ str.equalsIgnoreCase("java_programming"));
     
     // Compares two strings lexicographically. The comparison is based on the unicode value of each character in the strings.
     System.out.println("\npublic int compareTo(String) \nstr.compareTo(\"Java\") >> "+ str.compareTo("Java"));
