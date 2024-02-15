@@ -10,20 +10,29 @@ class PrimeCount {
        array = pc.getArray(100000);
        
        long startTime = System.nanoTime();
-       pc.countPrimeNonPrime(array);
+       pc.countPrimeNonPrime_1(array);
        long endTime = System.nanoTime();
        long totalTime = endTime - startTime;
        
        System.out.println("Prime count : "+ prime);
        System.out.println("Non prime count : " + nonPrime);
        System.out.println("Time required to find prime numbers count : " + totalTime);
+       
+       long startTime_2 = System.nanoTime();
+       pc.countPrimeNonPrime_2(array);
+       long endTime_2 = System.nanoTime();
+       long totalTime_2 = endTime_2 - startTime_2;
+       
+       System.out.println("Prime count : "+ prime);
+       System.out.println("Non prime count : " + nonPrime);
+       System.out.println("Time required to find prime numbers count (second time): " + totalTime_2);
        /*for (int num : array) {
           System.out.println(num);
        }  */ 
     }
     
      // Method to count prime number and non-prime number - 
-    int countPrimeNonPrime(int[] array) {
+    int countPrimeNonPrime_1(int[] array) {
         prime = nonPrime = 0;
         
         for (int i = 0; i < array.length; i++) {
@@ -38,12 +47,30 @@ class PrimeCount {
         return 0;
     }
     
+     // Method to count prime number and non-prime number - 
+    int countPrimeNonPrime_2(int[] array) {
+        prime = nonPrime = 0;
+        
+        for (int i = 0; i < array.length; i++) {
+            int checkNumber = array[i];
+            
+            if (!(isPrime(checkNumber))) {
+                nonPrime++;
+            } else {
+                prime++;    
+            }
+        } 
+        return 0;
+    }
+    
     // Method to check the given number is prime or not
     boolean isPrime(int no) {
         for (int i = 2; i < no; i++) {
               if (no % i == 0) {
+                  //System.out.println("Inside isPrime: " + no);
                   return false;
               } else {
+                  System.out.println("Inside isPrime: " + no);
                   return true;
               }
         }
