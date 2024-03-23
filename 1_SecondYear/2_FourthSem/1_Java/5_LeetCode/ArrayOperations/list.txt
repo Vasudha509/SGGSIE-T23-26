@@ -1,0 +1,27 @@
+Intergace List<E>
+Package                   : java.util
+
+**Type Parameters     :  **E - the type of elements in this list
+
+**All Superinterfaces :  **Collection<E>, Iterable<E>
+
+**All Known Implementing Classes : **AbsractList, AbstractSequentialList, ArrayList, AttributeList, CopyOnWriteArrayList, LinkedList, RoleList, RoleUnresolvedList, Stack, Vector.
+
+public interface List<E> extends Collection<E>
+An ordered collection (also known as a sequence).
+The user of this interface has precide control over where in the list each element is inserted.
+The user can access elements by their integer (position in the list), and search for elements in the list.
+Unlike sets, lists typically allow duplicate elements.
+More formally, lists typically allow pairs of elements e1 and e2 such that e1.equals(e2), and they typically allow multiple null elements if they allow null elements at all.
+The List interface provides four methods for positional (indexed) access to list elements.
+The List interface provides a special iterator, called a ListIterator, that allows element insertion and replacement, and bidirectional access in addition to the normal operations that the Iterator interface provides.
+A method is provided to obtain a list iterator that starts at a specified position in the list.
+The List interface provides two methods to search for a specified object.
+From a performance standpoint, these methods should be used with caution. In many implementations they will perform costly linear searches.
+The List interface provides two methods to efficientlly insert and remove multiple elements at an arbitrary point in the list
+Note: While it is permissible for lists to contain themselves as elements, extreme caution is advised: the equals and hashCode methods are no longer well defined on such a list.
+Instance Methods
+**boolean add (E e) : **
+void add (int index, E element) :
+boolean addAll (Collection <? extends E> c) :
+boolean addAll (int index, Collection <? extends E> c) :
