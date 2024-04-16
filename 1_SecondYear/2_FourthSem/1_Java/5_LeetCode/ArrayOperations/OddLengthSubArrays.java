@@ -6,14 +6,25 @@ A subarray is a contiguous subsequence of the array.
 
 class OddLengthSubArrays {
     public int sumOddLengthSubarrays (int[] arr) {
-      int eleSum = 0;
-      int arrayLength = arr.length;
-      if (arrayLength % 2 != 0) {
+      int n = arr.length; // the length of the input array
+      int totalSum = 0;   // This will hold the sum of all odd-length subarrays
+      
+      // We iterate over each element of the array as the start point for out subarrays.
+      for (int startIndex = 0; startIndex < n; ++startIndex) {
+          int subarraySum = 0; // Holds the sum of the current subarray.
           
+          // We increases the end point of our subarray one element at a time
+          for (int endIndex = startIndex; endIndex < n; ++endIndex) {
+              subarraySum += arr[endIndex];
+              
+              // Check if the length of the current subarray is odd
+              if ((endIndex - startIndex + 1) % 2 == 1) {
+                  totalSum += subarraySum;
+              }
+          }
       }
-        for (int i = 0; i < arr.length; i++) {
-            eleSum += arr[i];
-        }
+      
+      return totalSum;
     }
     
     public static void main (String[] args) {
